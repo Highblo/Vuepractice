@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vuedirective</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- v-once -->
+    <p v-once>{{ message }}</p>
+    <button v-on:click="clickHandler">button</button>
+    <!-- v-pre -->
+    <p v-pre>{{ message }}</p>
+    <!-- v-html -->
+    <p>{{ message }}</p>
+    <p v-html="message"></p>
+    <!-- v-cloak -->
+    <p v-cloak>{{ text }}</p>
+    <!-- v-text -->
+    <h2>mastache</h2>
+    <p>{{ text }}</p>
+
+    <h2>v-text</h2>
+    <p v-text="text"></p>
+    <!-- javascirpt式 -->
+    <p>{{ text }}</p>
+    <p>{{ number + 1 }}</p>
+    <p>{{ text.split("").reverse().join("") }}</p>
+    <p>{{ ok ? "yes" : "no" }}</p>
+    <!-- v-bindの省略記法 -->
+    <a v-bind:href="url">Link1</a>
+    <br>
+    <a :href="url">Link2</a>
+    <!-- 算出プロパティ -->
+    <p>{{ reversedMessage }}</p>
+    <!-- キャッシュありかなしか -->
+    <p>best price: <input type="text" v-model="basePrice"></p>
+    <p>tax included price: <input type="text" v-model="taxIncludedPrice"></p>
+    <!-- 監視プロパティ(ウォッチャ) -->
+    <p>{{ text }}</p>
+    <p>
+      <input type="text" v-model="text">
+    </p>
+
+    <p><input type="text" v-model="km">k</p>
+    <p><input type="text" v-model="m">m</p>
+
+    <p><input type="text" v-model="firstName"></p>
+    <p><input type="text" v-model="lastName"></p>
+    <p>fullName: {{ fullName }}</p>
+    <!-- オプション -->
+    <ul>
+      <li v-for="color in colors">{{ color.name }}</li>
+    </ul>
+    <button v-on:click="onClickColor">ボタン</button>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="vue.js"></script>
+</body>
+</html>
